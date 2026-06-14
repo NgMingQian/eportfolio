@@ -4,19 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ng Ming Qian | e-Portfolio</title>
+<title>A221003_NgMingQian_Nelson_Project2</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --primary:#2563eb;
-    --secondary:#0f172a;
-    --accent:#38bdf8;
-    --light:#f8fafc;
+    --primary:#ef4444;
+    --secondary:#111827;
+    --accent:#f59e0b;
+    --success:#22c55e;
+    --light:#f3f4f6;
     --white:#ffffff;
-    --text:#334155;
+    --text:#d1d5db;
+    --card:#1f2937;
+    --border:#374151;
 }
 
 *{
@@ -31,124 +34,150 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#f1f5f9;
+    background:linear-gradient(180deg,#111827,#0f172a);
     color:var(--text);
+    line-height:1.7;
 }
 
-/* Header */
+/* HEADER */
 
 header{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
+    background:
+    linear-gradient(rgba(17,24,39,0.85),rgba(17,24,39,0.95)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
     color:white;
     text-align:center;
-    padding:90px 20px;
+    padding:120px 20px;
+    border-bottom:4px solid var(--primary);
 }
 
 header h1{
-    font-size:3rem;
+    font-size:3.5rem;
+    font-weight:700;
     margin-bottom:10px;
 }
 
 header p{
+    color:#cbd5e1;
     margin-bottom:8px;
 }
 
 .profile-icon{
-    width:130px;
-    height:130px;
+    width:140px;
+    height:140px;
     border-radius:50%;
-    background:white;
-    color:#2563eb;
-    font-size:50px;
+    background:rgba(239,68,68,0.15);
+    border:3px solid var(--primary);
+    color:white;
+    font-size:55px;
     margin:auto;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:20px;
+    margin-bottom:25px;
+    backdrop-filter:blur(8px);
 }
 
 .sdg-badge{
     display:inline-block;
-    background:#2563eb;
-    padding:12px 25px;
+    background:linear-gradient(90deg,var(--primary),#dc2626);
+    color:white;
+    padding:12px 28px;
     border-radius:50px;
     margin-top:20px;
     font-weight:600;
+    box-shadow:0 0 20px rgba(239,68,68,0.4);
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 nav{
-    background:white;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    background:rgba(17,24,39,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
     text-align:center;
-    padding:15px;
+    padding:18px;
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    color:#0f172a;
-    margin:0 15px;
+    margin:0 18px;
     font-weight:600;
+    transition:0.3s;
 }
 
 nav a:hover{
-    color:#2563eb;
+    color:var(--primary);
 }
 
-/* Sections */
+/* SECTION */
 
 section{
-    max-width:1200px;
+    max-width:1300px;
     margin:auto;
-    padding:80px 20px;
+    padding:90px 25px;
 }
 
 .section-title{
     text-align:center;
-    font-size:2.2rem;
-    margin-bottom:50px;
-    color:#0f172a;
+    font-size:2.5rem;
+    margin-bottom:60px;
+    color:white;
+    position:relative;
+}
+
+.section-title::after{
+    content:'';
+    width:80px;
+    height:4px;
+    background:var(--primary);
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-15px;
+    border-radius:20px;
 }
 
 .about{
-    text-align:center;
     max-width:900px;
     margin:auto;
-    line-height:1.8;
+    text-align:center;
+    background:var(--card);
+    padding:40px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Cards */
+/* GRID */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:35px;
 }
 
+/* CARD */
+
 .card{
-    background:white;
-    border-radius:15px;
+    background:var(--card);
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
+    border:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-}
-
-.placeholder{
-    height:220px;
-    background:#cbd5e1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    color:#475569;
+    transform:translateY(-10px);
+    border-color:var(--primary);
+    box-shadow:0 15px 40px rgba(239,68,68,0.2);
 }
 
 .video-container{
@@ -168,107 +197,192 @@ section{
 }
 
 .card-content{
-    padding:20px;
+    padding:25px;
 }
 
 .card-content h3{
-    margin-bottom:10px;
-    color:#0f172a;
+    color:white;
+    margin-bottom:12px;
 }
 
 .video-link{
-    background:#e2e8f0;
-    padding:10px;
-    border-radius:8px;
+    background:#111827;
+    border:1px solid var(--border);
+    color:#fca5a5;
+    padding:12px;
+    border-radius:10px;
     margin:15px 0;
+    word-break:break-all;
 }
 
 .reflection{
-    border-left:4px solid #2563eb;
-    padding-left:12px;
-    font-style:italic;
+    border-left:4px solid var(--primary);
+    padding-left:15px;
+    margin-top:15px;
+    color:#cbd5e1;
 }
 
-/* Project Button */
+/* BUTTON */
 
 .btn{
     display:inline-block;
-    background:#2563eb;
+    background:linear-gradient(90deg,var(--primary),#dc2626);
     color:white;
     text-decoration:none;
-    padding:10px 18px;
-    border-radius:8px;
+    padding:12px 22px;
+    border-radius:10px;
     margin-top:15px;
+    transition:0.3s;
+    font-weight:600;
 }
 
 .btn:hover{
-    background:#1d4ed8;
+    transform:translateY(-2px);
+    box-shadow:0 5px 20px rgba(239,68,68,0.4);
 }
 
-/* Timeline */
+/* TIMELINE */
 
 .timeline{
-    border-left:4px solid #2563eb;
-    padding-left:25px;
+    position:relative;
+    margin-left:20px;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:-20px;
+    top:0;
+    width:4px;
+    height:100%;
+    background:var(--primary);
 }
 
 .timeline-item{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
     margin-bottom:30px;
+    border-radius:15px;
+    position:relative;
 }
 
-/* Skills */
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-31px;
+    top:30px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--primary);
+}
+
+.timeline-item h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+/* SKILLS */
 
 .skills{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:15px;
+    gap:18px;
 }
 
 .skill{
-    background:white;
-    padding:12px 20px;
-    border-radius:50px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:12px 22px;
+    border-radius:40px;
+    color:white;
+    transition:0.3s;
 }
 
-/* Resources */
+.skill:hover{
+    background:var(--primary);
+    transform:translateY(-3px);
+}
+
+/* RESOURCES */
 
 .resources{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:35px;
+    border-radius:20px;
 }
 
 .resources li{
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
-    background:#0f172a;
-    color:white;
+    background:#020617;
+    color:#94a3b8;
     text-align:center;
-    padding:40px;
+    padding:50px 20px;
+    border-top:3px solid var(--primary);
 }
 
-/* Mobile */
+footer a{
+    color:#f87171;
+    text-decoration:none;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
+header{
+    padding:80px 20px;
+}
+
 header h1{
-    font-size:2rem;
+    font-size:2.2rem;
 }
 
 nav a{
     display:block;
-    margin:10px;
+    margin:12px;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.about{
+    padding:25px;
 }
 
 }
-
 </style>
 </head>
 
@@ -279,6 +393,7 @@ nav a{
 <div class="profile-icon">
 👨‍💻
 </div>
+
 
 <h1>NG MING QIAN</h1>
 
@@ -325,6 +440,8 @@ To develop mobile applications that are functional, responsive, and capable of s
 <strong>SDG Statement:</strong>
 Supporting Sustainable Development Goal 16 by improving community safety through faster incident reporting, emergency awareness, and access to important public safety information.
 </p>
+
+</div>
 
 </section>
 
@@ -469,7 +586,7 @@ Supporting Sustainable Development Goal 16 by improving community safety through
 https://youtu.be/mUj1PeviMY8
 </div>
 
-<a href="https://github.com/NgMingQian/A221003_Ng_Nelson_Project1" class="btn">
+<a href="https://github.com/NgMingQian/A221003_Ng_Nelson_Project1" class="btn" target="_blank">
 GitHub Repository
 </a>
 
@@ -507,7 +624,7 @@ Through this project, I learned how to combine multiple lab concepts into a work
 https://youtu.be/3CAQO9xAlOg
 </div>
 
-<a href="https://github.com/NgMingQian/A221003_Ng_Nelson_Project2" class="btn">
+<a href="https://github.com/NgMingQian/A221003_Ng_Nelson_Project2" class="btn" target="_blank">
 GitHub Repository
 </a>
 
@@ -623,7 +740,11 @@ By structuring the <strong>Community Safety Alert App</strong>, I successfully b
 
 <p>Instructor: Mr Nelson Sana</p>
 
-<p>GitHub Pages: ngmingqian.github.io</p>
+<p>GitHub Pages:
+<a href="https://ngmingqian.github.io/mingqian/"
+target="_blank">
+ngmingqian.github.io
+</a></p>
 
 </footer>
 
