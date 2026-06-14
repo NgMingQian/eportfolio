@@ -1,11 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ng Ming Qian | e-Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#2563eb;
+    --secondary:#0f172a;
+    --accent:#38bdf8;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --text:#334155;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f1f5f9;
+    color:var(--text);
+}
+
+/* Header */
+
+header{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    margin-bottom:8px;
+}
+
+.profile-icon{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:white;
+    color:#2563eb;
+    font-size:50px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.sdg-badge{
+    display:inline-block;
+    background:#2563eb;
+    padding:12px 25px;
+    border-radius:50px;
+    margin-top:20px;
+    font-weight:600;
+}
+
+/* Navigation */
+
+nav{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0f172a;
+    margin:0 15px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+/* Sections */
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:50px;
+    color:#0f172a;
+}
+
+.about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* Cards */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.placeholder{
+    height:220px;
+    background:#cbd5e1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    color:#475569;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+    color:#0f172a;
+}
+
+.video-link{
+    background:#e2e8f0;
+    padding:10px;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.reflection{
+    border-left:4px solid #2563eb;
+    padding-left:12px;
+    font-style:italic;
+}
+
+/* Project Button */
+
+.btn{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+/* Timeline */
+
+.timeline{
+    border-left:4px solid #2563eb;
+    padding-left:25px;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+}
+
+/* Skills */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:white;
+    padding:12px 20px;
+    border-radius:50px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Resources */
+
+.resources{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.resources li{
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header h1{
+    font-size:2rem;
+}
+
+nav a{
+    display:block;
+    margin:10px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Hello World</h1>
+
+<header>
+
+<div class="profile-icon">
+👨‍💻
+</div>
+
+<h1>NG MING QIAN</h1>
+
+<p>A221003</p>
+<p>Mobile Application Programming</p>
+<p>Instructor: Mr Nelson Sana</p>
+
+<div class="sdg-badge">
+SDG 16 - Community Safety Alert App
+</div>
+
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#labs">Labs</a>
+<a href="#projects">Projects</a>
+<a href="#journey">Journey</a>
+<a href="#skills">Skills</a>
+<a href="#resources">Resources</a>
+</nav>
+
+<section id="about">
+
+<h2 class="section-title">Student Profile</h2>
+
+<div class="about">
+
+<p>
+[Insert your personal introduction here]
+</p>
+
+<br>
+
+<p>
+<strong>Learning Goals:</strong>
+[Insert your learning goals here]
+</p>
+
+<br>
+
+<p>
+<strong>SDG Statement:</strong>
+[Insert SDG statement here]
+</p>
+
+</div>
+
+</section>
+
+<section id="labs">
+
+<h2 class="section-title">Lab Submissions</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="placeholder">Lab 1 Screenshot</div>
+<div class="card-content">
+<h3>Lab 1 - UI Design</h3>
+<p>Focus on layout structure, alignment, and basic composables in Jetpack Compose.</p>
+<div class="video-link">https://youtu.be/OA0XsVrS6g8</div>
+<p class="reflection">This lab helped me understand the basics of user interface design in mobile applications. I learned how layout structure, colors, and alignment affect user experience. It improved my awareness of designing clean and user-friendly screens.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="placeholder">Lab 2 Screenshot</div>
+<div class="card-content">
+<h3>Lab 2 - Interaction</h3>
+<p>Handling state, button clicks, and dynamic user inputs.</p>
+<div class="video-link">https://youtu.be/8r3Zqagpv-U</div>
+<p class="reflection">In this lab, I learned how user interactions such as button clicks and input handling work. It helped me understand how apps respond dynamically to user actions. This made my application feel more interactive and functional.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="placeholder">Lab 3 Screenshot</div>
+<div class="card-content">
+<h3>Lab 3 - Material Design</h3>
+<p>Implementing Material 3 components for a polished visual identity.</p>
+<div class="video-link">https://youtu.be/p7Y_baRHzCY</div>
+<p class="reflection">This lab introduced me to Material Design principles in Android development. I learned how to use components like cards, buttons, and consistent spacing. It helped improve the visual quality of my app.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="placeholder">Lab 4 Screenshot</div>
+<div class="card-content">
+<h3>Lab 4 - Navigation</h3>
+<p>Setting up a NavHost to manage transitions between multiple screens.</p>
+<div class="video-link">https://youtu.be/Z39Y2vm76lc</div>
+<p class="reflection">In this lab, I learned how to move between different screens using navigation components. It made my app more structured and easier to use. I also understood how navigation improves user flow.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="placeholder">Lab 5 Screenshot</div>
+<div class="card-content">
+<h3>Lab 5 - Room Database</h3>
+<p>Persistent local storage using SQL-based Room library.</p>
+<div class="video-link">https://youtu.be/0_CO65p7bIs</div>
+<p class="reflection">This lab taught me how to store data locally using Room database. I learned how to save, update, and retrieve data inside the app. It helped me understand offline data management in Android.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="placeholder">
+Project 1 Screenshot
+</div>
+
+<div class="card-content">
+
+<h3>Project 1</h3>
+
+<p><strong>Problem Statement:</strong></p>
+<p>Community safety incidents such as robbery, fire, and accidents are often reported in an unstructured and delayed manner within the community, without a centralized or quick way to share details.</p>
+
+<div class="video-link">
+https://youtu.be/mUj1PeviMY8
+</div>
+
+<a href="#" class="btn">
+GitHub Repository
+</a>
+
+<p style="margin-top:15px;">
+<strong>Lessons Learned:</strong>
+Through this project, I learned how to combine multiple lab concepts into a working application. I also improved my understanding of UI design and navigation flow. It taught me how to debug real application issues.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="placeholder">
+Project 2 Screenshot
+</div>
+
+<div class="card-content">
+
+<h3>Project 2</h3>
+
+<p><strong>Problem Statement:</strong></p>
+<p>A lack of persistent data storage, live external information, and hardware-aware features limits the responsiveness and offline availability of emergency reporting systems</p>
+
+<div class="video-link">
+YouTube VSR Link
+</div>
+
+<a href="#" class="btn">
+GitHub Repository
+</a>
+
+<p style="margin-top:15px;">
+<strong>Lessons Learned:</strong>
+This project helped me understand API integration and sensor usage in mobile apps. I learned how to connect cloud services with mobile applications. It also improved my problem-solving and debugging skills.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="journey">
+
+<h2 class="section-title">Reflection & Learning Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Lab 1</h3>
+<p>[Reflection]</p>
+</div>
+
+<div class="timeline-item">
+<h3>Lab 2</h3>
+<p>[Reflection]</p>
+</div>
+
+<div class="timeline-item">
+<h3>Lab 3</h3>
+<p>[Reflection]</p>
+</div>
+
+<div class="timeline-item">
+<h3>Lab 4</h3>
+<p>[Reflection]</p>
+</div>
+
+<div class="timeline-item">
+<h3>Lab 5</h3>
+<p>[Reflection]</p>
+</div>
+
+<div class="timeline-item">
+<h3>Project 2 Achievement</h3>
+<p>[Growth, Challenges, SDG Impact]</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills & Tech Stack</h2>
+
+<div class="skills">
+
+<span class="skill">Kotlin</span>
+<span class="skill">Jetpack Compose</span>
+<span class="skill">Android Studio</span>
+<span class="skill">Room Database</span>
+<span class="skill">Firebase</span>
+<span class="skill">REST API</span>
+<span class="skill">GitHub</span>
+<span class="skill">Material Design 3</span>
+<span class="skill">Navigation Component</span>
+
+</div>
+
+</section>
+
+<section id="resources">
+
+<h2 class="section-title">Resources & References</h2>
+
+<div class="resources">
+
+<ul>
+
+<li>API Used: [Insert Here]</li>
+
+<li>Libraries Used: [Insert Here]</li>
+
+<li>Firebase Services: [Insert Here]</li>
+
+<li>AI Assistance: ChatGPT used for learning, debugging and code improvement.</li>
+
+<li>Additional References: [Insert Here]</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<footer>
+
+<p><strong>Ng Ming Qian</strong></p>
+
+<p>A221003 | Mobile Application Programming</p>
+
+<p>Instructor: Mr Nelson Sana</p>
+
+<p>GitHub Pages: ngmingqian.github.io</p>
+
+</footer>
+
 </body>
 </html>
