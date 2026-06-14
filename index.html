@@ -151,6 +151,22 @@ section{
     color:#475569;
 }
 
+.video-container{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+}
+
+.video-container iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
+}
+
 .card-content{
     padding:20px;
 }
@@ -291,25 +307,24 @@ SDG 16 - Community Safety Alert App
 
 <div class="about">
 
+
 <p>
-[Insert your personal introduction here]
+I am Ng Ming Qian (A221003), a student in the Mobile Application Programming course. Throughout this course, I have developed practical skills in Android application development using Kotlin and Jetpack Compose. My work focuses on designing user-friendly mobile applications, implementing database management, integrating APIs, and utilizing mobile device sensors to create real-world solutions.
 </p>
 
 <br>
 
 <p>
 <strong>Learning Goals:</strong>
-[Insert your learning goals here]
+To develop mobile applications that are functional, responsive, and capable of solving real-world problems through modern Android development technologies, cloud services, APIs, and local database integration.
 </p>
 
 <br>
 
 <p>
 <strong>SDG Statement:</strong>
-[Insert SDG statement here]
+Supporting Sustainable Development Goal 16 by improving community safety through faster incident reporting, emergency awareness, and access to important public safety information.
 </p>
-
-</div>
 
 </section>
 
@@ -320,7 +335,17 @@ SDG 16 - Community Safety Alert App
 <div class="grid">
 
 <div class="card">
-<div class="placeholder">Lab 1 Screenshot</div>
+<div class="video-container">
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/OA0XsVrS6g8"
+        title="Lab 1 Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
 <div class="card-content">
 <h3>Lab 1 - UI Design</h3>
 <p>Focus on layout structure, alignment, and basic composables in Jetpack Compose.</p>
@@ -396,7 +421,7 @@ Project 1 Screenshot
 https://youtu.be/mUj1PeviMY8
 </div>
 
-<a href="#" class="btn">
+<a href="https://github.com/NgMingQian/A221003_Ng_Nelson_Project1" class="btn">
 GitHub Repository
 </a>
 
@@ -423,10 +448,10 @@ Project 2 Screenshot
 <p>A lack of persistent data storage, live external information, and hardware-aware features limits the responsiveness and offline availability of emergency reporting systems</p>
 
 <div class="video-link">
-YouTube VSR Link
+https://youtu.be/3CAQO9xAlOg
 </div>
 
-<a href="#" class="btn">
+<a href="https://github.com/NgMingQian/A221003_Ng_Nelson_Project2" class="btn">
 GitHub Repository
 </a>
 
@@ -450,33 +475,34 @@ This project helped me understand API integration and sensor usage in mobile app
 <div class="timeline">
 
 <div class="timeline-item">
-<h3>Lab 1</h3>
-<p>[Reflection]</p>
+<h3>My Mobile Engineering Journey: From Static UI to Connected Systems</h3>
+<p>
+Looking back at the progression from Lab 1 to Project 2, my journey in mobile application development has been a transformation from designing surface-level interfaces to engineering fully reactive, persistent, and full-stack mobile architectures. 
+<br><br>
+When I began in <strong>Lab 1</strong>, the challenge was entirely structural—shifting from static design mindsets to composing layouts dynamically with Jetpack Compose using <code>Row</code>, <code>Column</code>, and <code>Box</code> layouts. In <strong>Lab 2 and Lab 3</strong>, I elevated these fundamentals by managing runtime interactions using <code>remember</code> state handlers and establishing a unified visual identity through the Material 3 Theme Builder and smooth card expansions (<code>animateContentSize()</code>). 
+<br><br>
+The structural complexity scaled significantly in <strong>Lab 4 and Lab 5</strong>, where I stepped away from single-screen limits. I learned to route multi-screen paths using a structured <code>NavHost</code>, protect transient data across device configurations using <code>ViewModels</code>, and transition from volatile, in-memory arrays to persistent local database architectures using <code>Room</code> entities, DAOs, and asynchronous data streams.
+</p>
 </div>
 
 <div class="timeline-item">
-<h3>Lab 2</h3>
-<p>[Reflection]</p>
+<h3>Technical Breakthroughs, Challenges, and Triumphs</h3>
+<p>
+The greatest leap occurred when scaling our core features into the advanced framework of Project 2. Expanding the workspace to a comprehensive 7-screen architecture introduced major engineering challenges, particularly when integrating cloud synchronization and physical hardware constraints. 
+<br><br>
+Connecting local, offline-accessible SQLite tables via Room with instantaneous cloud tracking on Firebase Firestore forced me to rethink data architecture and state single-source-of-truth principles. Additionally, overcoming asynchronous concurrency barriers when fetching external network packets via public REST APIs and wiring physical on-device hardware sensors (like GPS location monitoring or the camera) required deep debugging and a firm grasp of Android lifecycles. 
+<br><br>
+Using AI assistants like ChatGPT strategically as a programming mentor allowed me to trace runtime crashes, decipher complex stack traces, and implement clean MVVM repository patterns safely.
+</p>
 </div>
 
 <div class="timeline-item">
-<h3>Lab 3</h3>
-<p>[Reflection]</p>
-</div>
-
-<div class="timeline-item">
-<h3>Lab 4</h3>
-<p>[Reflection]</p>
-</div>
-
-<div class="timeline-item">
-<h3>Lab 5</h3>
-<p>[Reflection]</p>
-</div>
-
-<div class="timeline-item">
-<h3>Project 2 Achievement</h3>
-<p>[Growth, Challenges, SDG Impact]</p>
+<h3>Real-World SDG 16 Social Impact</h3>
+<p>
+Beyond writing clean code, this journey gave me a profound appreciation for how software engineering directly influences social development. Aligning my development framework with <strong>Sustainable Development Goal 16: Peace, Justice, and Strong Institutions</strong> shifted my perspective from building simple utility applications to developing solutions for real community crises. 
+<br><br>
+By structuring the <strong>Community Safety Alert App</strong>, I successfully built a platform that tackles delayed, fragmented emergency notifications. Replacing disorganized public alerts with an organized, persistent, and immediate cross-sharing structure directly provides institutional transparency, raises localized awareness, and establishes rapid accountability. This course proved that mobile applications are powerful instruments capable of building safer, highly informed, and resilient communities.
+</p>
 </div>
 
 </div>
@@ -511,15 +537,21 @@ This project helped me understand API integration and sensor usage in mobile app
 
 <ul>
 
-<li>API Used: [Insert Here]</li>
 
-<li>Libraries Used: [Insert Here]</li>
+<li><strong>API Used:</strong> Advice Slip JSON API (Motivational Safety Tips)</li>
 
-<li>Firebase Services: [Insert Here]</li>
+<li><strong>Libraries Used:</strong> Retrofit, Gson Converter, Room Persistence Library</li>
 
-<li>AI Assistance: ChatGPT used for learning, debugging and code improvement.</li>
+<li><strong>Firebase Services:</strong> Firebase Firestore Cloud Database</li>
 
-<li>Additional References: [Insert Here]</li>
+<li><strong>Android Libraries:</strong> CameraX, ML Kit Barcode Scanning, Navigation Compose</li>
+
+<li><strong>Development Tools:</strong> Android Studio, GitHub, GitHub Pages</li>
+
+<li><strong>AI Assistance:</strong> ChatGPT was used for learning support, debugging assistance, UI improvement suggestions, code explanation, and project documentation guidance.</li>
+
+<li><strong>References:</strong> Android Developer Documentation, Firebase Documentation, Google ML Kit Documentation, Material Design 3 Guidelines.</li>
+
 
 </ul>
 
